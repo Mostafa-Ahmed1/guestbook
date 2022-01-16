@@ -1,0 +1,18 @@
+﻿@model guestbook.Models.message
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Write Message</h1>
+<form asp-action="Create" asp-controller="Users" >
+ <div class="form-group row">
+            <label >Message</label>
+            <div >
+                <input class="form-control" type="text" asp-for="msg">
+                <span asp-validation-for="msg" class="alert-danger"></span>
+            </div>
+        </div>
+         <br />
+            <button type="submit">Write Message</button>
+</form>
+

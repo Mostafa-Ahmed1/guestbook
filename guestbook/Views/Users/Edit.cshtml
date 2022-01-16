@@ -1,0 +1,15 @@
+﻿@model guestbook.Models.message
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<form asp-action="Edit" asp-controller="Users" asp-route-id="id" class="form-group" >
+   <input type="hidden" asp-for="id" />
+ 
+            <label asp-for="msg" >Message</label>
+            <input class="form-control" type="text" asp-for="msg"/>
+
+         <br />
+            <button type="submit">Edit Message</button>
+</form>

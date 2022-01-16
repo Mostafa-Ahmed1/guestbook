@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>chat</h1>
+
+ @foreach(var item in @ViewBag.x)
+    {
+        <div><span>@item.User.username</span> : <span>@item.msg</span></div>
+        <input type="hidden" value="@ViewBag.x" id="chatId" />
+    }
+    
+
+
+<div id="AddMsg">
+</div>
+
+@section scripts{
+    
+<script type="text/javascript">
+    $(function(){
+        let id = $("#chatId").val();
+        $("#AddMsg").load("/Users/Reply?id="+id);
+    })
+</script>
+}

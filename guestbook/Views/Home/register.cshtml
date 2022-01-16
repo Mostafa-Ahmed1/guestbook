@@ -1,0 +1,39 @@
+﻿@model guestbook.Models.User
+@{
+    ViewData["Title"] = "register";
+}
+
+<h1>register</h1>
+
+<form asp-action="register" asp-controller="Home">
+    <div class="form-group row">
+            <label >Name</label>
+            <div >
+                <input class="form-control" type="text" asp-for="username">
+                <span asp-validation-for="username" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label >Email</label>
+            <div >
+                <input class="form-control" type="email" asp-for="email">
+                <span asp-validation-for="email" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label >Password</label>
+            <div >
+                <input class="form-control" type="password" asp-for="password">
+                <span asp-validation-for="password" class="alert-danger"></span>
+            </div>
+        </div>
+        @*<div class="form-group row">
+            <label >Confirm Password</label>
+            <div >
+                <input class="form-control" type="password" asp-for="confirmPassword">
+                <span asp-validation-for="confirmPassword" class="alert-danger"></span>
+            </div>
+        </div>*@
+        <br />
+        <button type="submit">register</button>
+</form>

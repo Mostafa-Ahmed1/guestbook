@@ -1,0 +1,35 @@
+﻿@model IEnumerable<guestbook.Models.message>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>messages</h1>
+<a asp-action="Create" asp-controller="Users" >Write Message</a>
+<table width=95% >
+    <thead>
+        <tr>
+            <th>Message Sender</th>
+            <th>Message</th>
+            <th>Message Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.User?.username</td>
+                <td>@item.msg</td>
+                <td>@item.time</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Users" asp-route-id="@item.id" >Edit</a>
+                    <a asp-action="Delete" asp-controller="Users" asp-route-id="@item.id" onclick="return confirm('Are You Sure To Delete @item.User.username Message?')" >Delete</a>
+                    <a asp-action="List" asp-controller="Users" asp-route-id="@item.chatId" >Reply</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
